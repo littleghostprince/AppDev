@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntroCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,19 @@ namespace Intro
     {
         static void Main(string[] args)
         {
+           /* Console.Write("Enter Name: ");
+            string name = Console.ReadLine();
+            Console.WriteLine($"Hello {name}"); 
+            */
             Console.WriteLine("Hello World!");
-            Console.ReadLine();
+
+            // DataTypes.Display();
+            //Strings.Display();
+            //Arrays.Display();
+            Iteration.Display();
+
+            Console.ReadLine(); //ctrl f5 runs in the realease mode. f5 is debug mode
+
         }
     }
 }

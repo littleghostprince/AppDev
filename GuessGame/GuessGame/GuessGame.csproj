@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8262A7FB-BF68-4056-9886-9254690FAB18}</ProjectGuid>
+    <ProjectGuid>{D38C6D70-4D42-44A8-81C6-93DF37077BCB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Intro</RootNamespace>
-    <AssemblyName>Intro</AssemblyName>
+    <RootNamespace>GuessGame</RootNamespace>
+    <AssemblyName>GuessGame</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,7 +34,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,20 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arrays.cs" />
-    <Compile Include="Collections.cs" />
-    <Compile Include="DataTypes.cs" />
-    <Compile Include="Delegates.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="Exceptions.cs" />
-    <Compile Include="Iteration.cs" />
-    <Compile Include="Methods.cs" />
-    <Compile Include="Nullable.cs" />
+    <Compile Include="game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strings.cs" />
-    <Compile Include="Structures.cs" />
-    <Compile Include="ValueReference.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
