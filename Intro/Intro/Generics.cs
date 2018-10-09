@@ -199,8 +199,10 @@ namespace IntroCore
 			public T GetArea()
 			{
 				double result =  Convert.ToDouble(width) + Convert.ToDouble(height);
-				// convert type (double) to T
-				return (T)Convert.ChangeType(result, typeof(T));
+                // convert type (double) to T
+
+
+                return (T)Convert.ChangeType(result, typeof(T));
 			}
 		}
 

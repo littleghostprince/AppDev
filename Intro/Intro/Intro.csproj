@@ -48,7 +48,9 @@
     <Compile Include="DataTypes.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Exceptions.cs" />
+    <Compile Include="Generics.cs" />
     <Compile Include="Iteration.cs" />
     <Compile Include="Methods.cs" />
     <Compile Include="Nullable.cs" />
