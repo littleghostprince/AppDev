@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfPaint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPaint"
+       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Paint" Height="350" Width="525" Icon="./Resource/nc.ico">
+    <StackPanel Background="LightGray">
+        <ToolBar x:Name="Toolbar" Height="30">
+            
+            <RadioButton x:Name="DrawButton" IsChecked="true" Click="DrawButton_Click" BorderBrush="#FFD2D2D2" Height="50" Width="80" GroupName="DrawGroup">
+                <StackPanel>
+                    <Label>Draw:</Label>
+                    <Image Source="./Resource/Brush.png" Width="20" Height="20"/>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Name="EraseButton" Click="DrawButton_Click" BorderBrush="#FFD2D2D2" Height="50" Width="80" GroupName="DrawGroup">
+                <StackPanel>
+                    <Label>Erase:</Label>
+                    <Image Source="./Resource/Eraser.png" Width="20" Height="20"/>
+                </StackPanel>
+            </RadioButton>
+
+            <RadioButton x:Name="SelectionButton" Click="DrawButton_Click" BorderBrush="#FFD2D2D2" Height="50" Width="80" GroupName="DrawGroup">
+                <StackPanel>
+                    <Label>Select:</Label>
+                    <Image Source="./Resource/Select.png" Width="20" Height="20"/>
+                </StackPanel>
+            </RadioButton>
+
+            <Separator/>
+
+            <Label VerticalAlignment="Center">Brush Size:</Label>
+            <ComboBox x:Name="BrushSize" VerticalAlignment="Center" SelectionChanged="BrushSize_SelectionChanged" DropDownClosed="BrushSize_DropDownClosed">
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">5</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
+                <ComboBoxItem>14</ComboBoxItem>
+            </ComboBox>
+            
+            <Label>Color:</Label>
+            <xctk:ColorPicker Name="Color" Width="40" SelectedColorChanged="Color_SelectedColorChanged"/>
+        </ToolBar>
+
+        <InkCanvas x:Name ="DrawingCanvas" Height="280">
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes x:Name="BrushAttrib" Width="5" Height="5" Color="Black"/>
+            </InkCanvas.DefaultDrawingAttributes>
+        </InkCanvas>
+    </StackPanel>
+</Window>

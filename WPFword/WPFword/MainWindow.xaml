@@ -1,0 +1,89 @@
+﻿<Window x:Class="WPFword.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFword"
+        mc:Ignorable="d"
+        Title="Word" Height="350" Width="525" Icon="./Resource/nc.ico" >
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                    <MenuItem x:Name="MenuNew" Header="_New" InputGestureText="Ctrl+N">
+                        <MenuItem.Icon>
+                             <Image Source="./Resource/New.bmp"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+            <MenuItem x:Name="MenuOpen" Header="_Open" InputGestureText="Ctrl+O" Click="MenuOpen_Click">
+                <MenuItem.Icon>
+                    <Image Source="./Resource/Open.bmp"/>
+                </MenuItem.Icon>
+            </MenuItem>
+
+                <MenuItem x:Name="MenuSave" Header="_Save" InputGestureText="Ctrl+S" Click="MenuSave_Click">
+                    <MenuItem.Icon>
+                        <Image Source="./Resource/Save.bmp"/>
+                    </MenuItem.Icon>
+
+                    <MenuItem x:Name="MenuExit" Header="_Exit" InputGestureText="Ctrl+Q" Click="MenuExit_Click">
+                        <MenuItem.Icon>
+                            <Image Source="./Resource/Exit.bmp"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="_Edit">
+                    <MenuItem x:Name="MenuCut" Header="Cut" InputGestureText="Ctrl+X" Command="ApplicationCommands.Cut"/>
+                    <MenuItem x:Name="MenuCopy" Header="Copy" InputGestureText="Ctrl+C" Command="ApplicationCommands.Copy"/>
+                    <MenuItem x:Name="MenuPaste" Header="Paste" InputGestureText="Ctrl+V" Command="ApplicationCommands.Paste"/>
+                    
+                    <Separator/>
+                <MenuItem Header="_Font" InputGestureText="Ctrl+F">
+                    <MenuItem x:Name="menuFontTimes" Header="Times" IsCheckable="True" StaysOpenOnClick ="True" Click="menuFontTimes_Click" />
+                    <MenuItem x:Name="menuFontCourier" Header="Courier" IsCheckable="True" StaysOpenOnClick ="True" Click="menuFontCourier_Click" />
+                    <MenuItem x:Name="menuFontAriel" Header="Ariel"  IsCheckable="True" StaysOpenOnClick ="True" Click="menuFontAriel_Click" />
+                </MenuItem>
+                </MenuItem>
+
+
+            </MenuItem>
+        </Menu>
+
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button x:Name="tbOpen" ToolTip="Open File" Click="MenuOpen_Click">
+                    <Image Source="./Resource/Open.bmp"/>
+                </Button>
+
+                <Button x:Name="tbSave" ToolTip="Open File" Click="MenuSave_Click">
+                    <Image Source="./Resource/Save.bmp"/>
+                </Button>
+
+                <Button x:Name="tbCut" ToolTip="Open File" Command="ApplicationCommands.Cut">
+                    <Image Source="./Resource/Cut.bmp"/>
+                </Button>
+
+                <Button x:Name="tbCopy" ToolTip="Open File" Command="ApplicationCommands.Copy">
+                    <Image Source="./Resource/Copy.bmp"/>
+                </Button>
+
+                <Button x:Name="tbPaste" ToolTip="Open File" Command="ApplicationCommands.Paste">
+                    <Image Source="./Resource/Paste.bmp"/>
+                </Button>
+
+                <Separator/>
+                
+                <Label>Font Size:</Label>
+                <ComboBox x:Name="comboFontSize" SelectionChanged="comboFontSize_SelectionChanged" DropDownClosed="comboFontSize_DropDownClosed">
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem IsSelected="true">12</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                    <ComboBoxItem>16</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        <TextBox x:Name="TextDoc" Height="290" Width="500"/>
+        
+    </DockPanel>
+</Window>

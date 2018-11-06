@@ -1,0 +1,31 @@
+﻿<Window x:Class="ListBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListBox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="440" Width="400">
+    <StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="auto" Background="LightGray">
+            <Button ToolTip="Select the directory to browse" x:Name="Select" Content="Select Directory" Click="Select_Click"/>
+            <CheckBox x:Name="Files" Content="Show Files" VerticalAlignment="Center" Checked="Files_Checked" Unchecked="Files_Unchecked">
+
+                <CheckBox.ToolTip>
+                <StackPanel>
+                    <Label Content="CheckBox" FontWeight="Bold"/>
+                    <Line Stroke="Black" X2="200"/>
+                    <TextBlock Width="200" TextWrapping="Wrap" Padding="10">
+                            The CheckBox is a toggle button in WPF.
+                    </TextBlock>
+                </StackPanel>
+            </CheckBox.ToolTip>
+            </CheckBox>
+            <CheckBox x:Name="Directories" Content="Show Directory" VerticalAlignment="Center" Checked="Directories_Checked" Unchecked="Directories_Unchecked"/>
+        </StackPanel>
+        <ListBox x:Name="ListBox" Height="350" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged"/>
+        <TextBlock x:Name="ListBoxInfo"/>
+    </StackPanel>
+    
+</Window>

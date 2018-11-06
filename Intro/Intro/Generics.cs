@@ -65,7 +65,7 @@ namespace IntroCore
 			// Containers can use generics to specify the exact type contained.
 			// This can be used to increase performance and
 			// to more clearly describe what is contained in the container.
-
+			
 			// List<T>
 			List<int> ints = new List<int>() { 1, 2, 3, 4 };
 			Console.Write("List<int>: ");
@@ -92,7 +92,7 @@ namespace IntroCore
 			Console.Write("ForEach: ");
 			animals.ForEach(element => Console.Write($"{element.name} "));
 			Console.WriteLine();
-
+						
 			// Stack<T> (FILO) - First In Last Out
 
 			// Queue<T> (FIFO) - First In First Out
@@ -141,7 +141,7 @@ namespace IntroCore
 			Console.WriteLine($"number: {otherNumber}");
 		}
 
-		// no need to create multiple methods where the only different is the parameter type
+		// no need to create multiple methods where the only difference is the parameter type
 		public static int Addition(int num1, int num2)
 		{
 			return (num1 + num2);
@@ -167,6 +167,19 @@ namespace IntroCore
 			double d1 = Convert.ToDouble(num1);
 			double d2 = Convert.ToDouble(num2);
 			Console.WriteLine($"{d1} + {d2} = {d1 + d2:f2}");
+		}
+
+		// generic constraints limit or specify what types can be used wuth the generics
+
+		// where T : class Type must be reference type.
+		// where T: struct Type must be value type.
+		// where T: new() Type must have public parameterless constructor.
+		// where T: <base class name>	Type must be or derive from the specified base class
+		// where T: <interface name>	Type must be or implement the specified interface.
+		// where T: U Type supplied for T must be or derive from the argument supplied for U.
+		public static bool InRange<T>(T v1, T min, T max) where T : IComparable
+		{
+			return (v1.CompareTo(min) >= 0 && v1.CompareTo(max) <= 0);
 		}
 
 		class Data<T>
@@ -199,10 +212,8 @@ namespace IntroCore
 			public T GetArea()
 			{
 				double result =  Convert.ToDouble(width) + Convert.ToDouble(height);
-                // convert type (double) to T
-
-
-                return (T)Convert.ChangeType(result, typeof(T));
+				// convert type (double) to T
+				return (T)Convert.ChangeType(result, typeof(T));
 			}
 		}
 

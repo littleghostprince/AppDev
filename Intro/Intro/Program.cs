@@ -1,29 +1,41 @@
-﻿using IntroCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace Intro
+namespace IntroCore
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-           /* Console.Write("Enter Name: ");
-            string name = Console.ReadLine();
-            Console.WriteLine($"Hello {name}"); 
-            */
-            Console.WriteLine("Hello World!");
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			//DataTypes.Display();
+			//Strings.Display();
+			//Arrays.Display();
+			//Iteration.Display();
+			//Methods.Display();
+			//Enums.Display();
+			//Structures.Display();
+			//Nullable.Display();
+			//ValueReference.Display();
+			//Collections.Display();
+			//Exceptions.Display();
+			//Delegates.Display();
+			//Events.Display();
+			//Generics.Display();
+			//Classes.Display();
+			//Operators.Display();
+			//Inheritances.Display();
+			//Interfaces.Display();
+			//ExtensionMethods.Display();
+			//Anonymous.Display();
+			//Lambda.Display();
+			//Enumerable.Display();
 
-            // DataTypes.Display();
-            //Strings.Display();
-            //Arrays.Display();
-            Iteration.Display();
+			//Dynamic.Display();
+			//Tuples.Display();
+			//Asynchronous.Display();
+			Linq.Display();
 
-            Console.ReadLine(); //ctrl f5 runs in the realease mode. f5 is debug mode
+			Console.ReadLine();
+		}
 
-        }
-    }
+	}
 }

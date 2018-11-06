@@ -1,0 +1,54 @@
+﻿<Window x:Class="ComboBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ComboBox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ComboBox x:Name="DrinkComboBox" Width="200" Margin="20">
+                <ComboBoxItem Content="Coke" IsSelected="True"/>
+                <ComboBoxItem Content="Sprite"/>
+                <ComboBoxItem Content="Fanta"/>
+            </ComboBox>
+            <TextBox x:Name="DrinkEntry" Width="120" Margin="10,20"/>
+            <Button x:Name="AddDrinkButton" Content="Add Drink" Width="80" Margin="10,20" Click="AddDrinkButton_Click"/>
+            <Button x:Name="RemoveDrinkButton" Content="Remove Drink" Width="80" Margin="10,20" Click="RemoveDrinkButton_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ComboBox x:Name="PokemonComboBox" Width="400" Margin="20">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Name"/>
+                            <Label Content="{Binding name}"/>
+                            <Label Content="Type"/>
+                            <Label Content="{Binding type}"/>
+                            <Label Content="Index"/>
+                            <Label Content="{Binding index}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel>
+            <ComboBox Cursor="Hand" x:Name="ColorComboBox" Width="400" Margin="20" HorizontalAlignment="Left">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                    <Setter Property="Cursor" Value="Pen"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                       <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="10" Height="10" Fill="{Binding Name}"/>
+                            <TextBlock Text = "{Binding Name}"/>
+                    </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+    </StackPanel>
+</Window>
