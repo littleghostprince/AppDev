@@ -1,0 +1,29 @@
+﻿<Window x:Class="Database.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Database"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <DataGrid x:Name="DatabaseDisplay" Margin="20" ItemsSource="{Binding}"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="SaveDatabse" Content="Save" Width="120" Margin="30" Click="SaveDatabse_Click"/>
+            <Button x:Name="UpdateDatabse" Content="Update" Width="120" Margin="30" Click="UpdateDatabse_Click"/>
+            <Button x:Name="ResetDatabase" Content="Reset" Width="120" Margin="30" Click="ResetDatabase_Click"/>
+        </StackPanel>
+        <GroupBox Header="Query">
+            <StackPanel>
+                <CheckBox x:Name="isPershiableCheckBox" Content="Is Pershiable" Margin="20" IsChecked="{Binding IsPerishable, Mode=TwoWay}"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Price" VerticalAlignment="Center"/>
+                    <Slider x:Name="PriceSlider" VerticalAlignment="Center" Minimum="0" Maximum="100" IsSnapToTickEnabled="True" TickFrequency="1" Width="120" Value="{Binding MinPrice, Mode=TwoWay}"/>
+                    <TextBlock VerticalAlignment="Center" Text="{Binding ElementName=PriceSlider,Path=Value}"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+                
+    </StackPanel>
+</Window>
