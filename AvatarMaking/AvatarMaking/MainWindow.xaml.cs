@@ -44,6 +44,10 @@ namespace AvatarMaking
         {
             Eyes.Source = eye3.Source;
         }
+        private void Eye4_Click(object sender, RoutedEventArgs e)
+        {
+            Eyes.Source = eye4.Source;
+        }
 
         private void Hair1_Click(object sender, RoutedEventArgs e)
         {
@@ -58,6 +62,10 @@ namespace AvatarMaking
         private void Hair3_Click(object sender, RoutedEventArgs e)
         {
             Hair.Source = hair3.Source;
+        }
+        private void Hair4_Click(object sender, RoutedEventArgs e)
+        {
+            Hair.Source = hair4.Source;
         }
 
         private void Mouth1_Click(object sender, RoutedEventArgs e)
@@ -75,26 +83,31 @@ namespace AvatarMaking
             Mouth.Source = mouth3.Source;
         }
 
+        private void Mouth4_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth4.Source;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Eyes.Source = null;
             Mouth.Source = null;
             Hair.Source = null;
+            HairAcessory = null;
         }
 
         private void A1_Click(object sender, RoutedEventArgs e)
         {
-
+            HairAcessory.Source = a1.Source;
         }
 
         private void A2_Click(object sender, RoutedEventArgs e)
         {
-
+            HairAcessory.Source = a2.Source;
         }
 
         private void A3_Click(object sender, RoutedEventArgs e)
         {
-
+            HairAcessory.Source = a3.Source;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
