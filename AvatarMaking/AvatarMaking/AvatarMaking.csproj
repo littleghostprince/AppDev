@@ -129,5 +129,28 @@
     <Resource Include="Resources\hair4.png" />
     <Resource Include="Resources\mouth4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\a4.png" />
+    <Resource Include="Resources\a5.png" />
+    <Resource Include="Resources\a6.png" />
+    <Resource Include="Resources\bald.png" />
+    <Resource Include="Resources\eye4.png" />
+    <Resource Include="Resources\eye5.png" />
+    <Resource Include="Resources\eye6.png" />
+    <Resource Include="Resources\eye7.png" />
+    <Resource Include="Resources\eye8.png" />
+    <Resource Include="Resources\hair5.png" />
+    <Resource Include="Resources\hair6.png" />
+    <Resource Include="Resources\hair7.png" />
+    <Resource Include="Resources\hair8.png" />
+    <Resource Include="Resources\mouth10.png" />
+    <Resource Include="Resources\mouth11.png" />
+    <Resource Include="Resources\mouth12.png" />
+    <Resource Include="Resources\mouth5.png" />
+    <Resource Include="Resources\mouth6.png" />
+    <Resource Include="Resources\mouth7.png" />
+    <Resource Include="Resources\mouth8.png" />
+    <Resource Include="Resources\mouth9.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -147,5 +147,100 @@ namespace AvatarMaking
                 newBitmap.Dispose();
             }
         }
+
+        private void A4_Click(object sender, RoutedEventArgs e)
+        {
+            HairAcessory.Source = a4.Source;
+        }
+
+        private void A5_Click(object sender, RoutedEventArgs e)
+        {
+            HairAcessory.Source = a5.Source;
+        }
+
+        private void A6_Click(object sender, RoutedEventArgs e)
+        {
+            HairAcessory.Source = a6.Source;
+        }
+
+        private void Mouth5_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth5.Source;
+        }
+
+        private void Mouth6_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth6.Source;
+        }
+
+        private void Mouth7_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth7.Source;
+        }
+
+        private void Mouth8_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth8.Source;
+        }
+
+        private void Mouth9_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth9.Source;
+        }
+
+        private void Mouth10_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth10.Source;
+        }
+
+        private void Mouth11_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth11.Source;
+        }
+
+        private void Mouth12_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = mouth12.Source;
+        }
+
+        private void Hair5_Click(object sender, RoutedEventArgs e)
+        {
+            Hair.Source = hair5.Source;
+        }
+
+        private void Hair6_Click(object sender, RoutedEventArgs e)
+        {
+            Hair.Source = hair6.Source;
+        }
+
+        private void Hair7_Click(object sender, RoutedEventArgs e)
+        {
+            Hair.Source = hair7.Source;
+        }
+
+        private void Hair8_Click(object sender, RoutedEventArgs e)
+        {
+            Hair.Source = hair8.Source;
+        }
+
+        private void Eye5_Click(object sender, RoutedEventArgs e)
+        {
+            Eyes.Source = eye5.Source;
+        }
+
+        private void Eye6_Click(object sender, RoutedEventArgs e)
+        {
+            Eyes.Source = eye6.Source;
+        }
+
+        private void Eye7_Click(object sender, RoutedEventArgs e)
+        {
+            Eyes.Source = eye7.Source;
+        }
+
+        private void Eye8_Click(object sender, RoutedEventArgs e)
+        {
+            Eyes.Source = eye8.Source;
+        }
     }
 }
