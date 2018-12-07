@@ -8,8 +8,51 @@
         WindowStartupLocation="CenterScreen"
         Title="Avatar.INC" Height="681.928" Width="736.747">
     <Window.Background>
-        <ImageBrush ImageSource="Resources/soft.jpg"></ImageBrush>
+        <ImageBrush ImageSource="Resources/marbel.jpg"></ImageBrush>
     </Window.Background>
+    <Window.Resources>
+        <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+
+        <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid Background="Transparent">
+                            <Border 
+                            Name="Border"
+                            Margin="0,0,-4,0" 
+                            Background="Transparent"
+                            BorderBrush="{StaticResource SolidBorderBrush}" 
+                             >
+                                <ContentPresenter x:Name="ContentSite"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              ContentSource="Header"
+                              Margin="12,2,12,2"
+                              RecognizesAccessKey="True"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
     <Grid>
         <TextBlock 
             Text="Avatar.INC" 
@@ -17,398 +60,583 @@
             FontSize="40" 
             Foreground="Black"
             HorizontalAlignment="Center" 
-            Margin="271,40,220.4,563"
-            FontFamily="Impact" Width="239"
+            Margin="264,40,217.4,563"
+            FontFamily="Georgia Bold Italic" Width="249"
+            Opacity="0.8"
            />
-        <DockPanel Margin="65,71,68.4,29">
+        <TextBlock 
+            Text="Avatar.INC" 
+            TextAlignment="Center"
+            FontSize="40" 
+            Foreground="Gold"
+            HorizontalAlignment="Center" 
+            Margin="261,40,220.4,563"
+            FontFamily="Georgia Bold Italic" Width="249"
+           />
+        <DockPanel Margin="45,71,22.4,29">
+
 
             <Grid x:Name="Canvas" 
                   Width="360"
                   Height="340"
                   DockPanel.Dock="Left">
-
-                <Image x:Name="Background"
+                <Border BorderBrush="DarkGray" 
+                        BorderThickness="2"
+                        CornerRadius="12"
+                        Margin="0,0,10,0">
+                    <Image x:Name="Background"
             HorizontalAlignment="Left" 
             Height="345" 
             VerticalAlignment="Top" 
             Width="360"
-            Source="Resources/DOTS.jpg"
+            Source="Resources/BG/DOTS.jpg"
             />
+                </Border>
                 <Image x:Name="Base"
             HorizontalAlignment="Left" 
             Height="340"
             Width="365"
             VerticalAlignment="Top" 
-            Source="Resources/base.png" Margin="0,0,-5,0"
+            Source="Resources/base.png"
             />
                 <Image x:Name="Eyes"
             HorizontalAlignment="Left" 
            Height="340" 
             Width="360"
-            VerticalAlignment="Top" 
-            Margin="0,0,-5,0"
+            VerticalAlignment="Top"         
             />
                 <Image x:Name="Hair"
             HorizontalAlignment="Left" 
              Height="340" 
             Width="360"
             VerticalAlignment="Top" 
-            Margin="0,0,-5,0"
             />
                 <Image x:Name="Mouth"
             HorizontalAlignment="Left" 
               Height="340" 
             Width="360"
             VerticalAlignment="Top" 
-            Margin="0,0,-5,0"
+            />
+                <Image x:Name="Clothes"
+            HorizontalAlignment="Left" 
+              Height="340" 
+            Width="360"
+            VerticalAlignment="Top" 
             />
                 <Image x:Name="HairAcessory"
             HorizontalAlignment="Left" 
              Height="340" 
             Width="360"
             VerticalAlignment="Top"
-            Margin="0,0,-5,0"
             />
             </Grid>
-            <TabControl HorizontalAlignment="Left"
-                    Height="448" 
-                    Width="232"
-                    DockPanel.Dock="Right">
-                <TabItem Header="Eyes">
-                    <Grid Background="#FFE5E5E5">
-                        <StackPanel Orientation="Horizontal" 
+
+            <TabControl HorizontalAlignment="Left" 
+                    Width="302"
+                    DockPanel.Dock="Right"
+                    TabStripPlacement="Right" Margin="0,52,0,10"
+                    Background="Transparent"
+                    BorderThickness="0">
+                <TabItem >
+                    <TabItem.Header>
+                        <Image Source="Resources/Icons/eyesicon.png" Height="50" Width="50"/>
+                    </TabItem.Header>
+                    <Border BorderBrush="#5b5c5e" 
+                            BorderThickness="3"
+                            CornerRadius="10">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" 
                                 VerticalAlignment="Top"
-                                Margin="0,10,20.4,0">
-                            <Button 
+                                Margin="0,10,10.2,0">
+                                <Button 
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye1_Click"
                         >
-                                <Image x:Name ="eye1" Source="Resources/eye1.png"/>
-                            </Button>
+                                    <Image x:Name ="eye1" Source="Resources/eyes/eye1.png"/>
+                                </Button>
 
-                            <Button
+                                <Button
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye2_Click"
                         >
-                                <Image  x:Name ="eye2" Source="Resources/eye2.png"/>
-                            </Button>
+                                    <Image  x:Name ="eye2" Source="Resources/eyes/eye2.png"/>
+                                </Button>
 
-                            <Button
+                                <Button
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye3_Click"
                         >
-                                <Image  x:Name="eye3" Source="Resources/eye3.png"/>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,80,0.4,240" Orientation="Horizontal">
-                            <Button x:Name="Eye4"
+                                    <Image  x:Name="eye3" Source="Resources/eyes/eye3.png"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,71,0.2,309" Orientation="Horizontal">
+                                <Button x:Name="Eye4"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye4_Click"
                         >
-                                <Image  x:Name="eye4" Source="Resources/eye4.png"/>
-                            </Button>
-                            <Button x:Name="Eye5"
+                                    <Image  x:Name="eye4" Source="Resources/eyes/eye4.png"/>
+                                </Button>
+                                <Button x:Name="Eye5"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye5_Click"
                         >
-                                <Image  x:Name="eye5" Source="Resources/eye5.png"/>
-                            </Button>
-                            <Button x:Name="Eye6"
+                                    <Image  x:Name="eye5" Source="Resources/eyes/eye5.png"/>
+                                </Button>
+                                <Button x:Name="Eye6"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye6_Click"
                         >
-                                <Image  x:Name="eye6" Source="Resources/eye6.png"/>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,163,0.4,157" Orientation="Horizontal">
-                            <Button x:Name="Eye7"
+                                    <Image  x:Name="eye6" Source="Resources/eyes/eye6.png"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,152,0.2,228" Orientation="Horizontal">
+                                <Button x:Name="Eye7"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye7_Click"
                         >
-                                <Image  x:Name="eye7" Source="Resources/eye7.png"/>
-                            </Button>
-                            <Button x:Name="Eye8"
+                                    <Image  x:Name="eye7" Source="Resources/eyes/eye7.png"/>
+                                </Button>
+                                <Button x:Name="Eye8"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Eye8_Click"
                         >
-                                <Image  x:Name="eye8" Source="Resources/eye8.png"/>
-                            </Button>
-                        </StackPanel>
-                    </Grid>
+                                    <Image  x:Name="eye8" Source="Resources/eyes/eye8.png"/>
+                                </Button>
+                                <Button x:Name="eye9"
+                            Height="60"
+                            Width="60"
+                            Margin="5,20"
+                            Content="🚫"
+                            FontSize="30"
+                            Click="Eye9_Click"
+                        />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </TabItem>
-                <TabItem Header="Hair">
-                    <Grid Background="#FFE5E5E5">
-                        <StackPanel Orientation="Horizontal" 
+                <TabItem>
+                    <TabItem.Header>
+                        <Image Source="Resources/Icons/hair.png" Width="50" Height="50"/>
+                    </TabItem.Header>
+
+                    <Border BorderBrush="#5b5c5e" 
+                            BorderThickness="3"
+                            CornerRadius="10">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" 
                                 VerticalAlignment="Top"
-                                Margin="0,10,20.4,0">
-                            <Button x:Name="Hair1"
+                                Margin="0,10,10.2,0">
+                                <Button x:Name="Hair1"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="Hair1_Click"
                                 >
-                                <Image  x:Name="hair1" Source="Resources/hair1.png"/>
-                            </Button>
+                                    <Image  x:Name="hair1" Source="Resources/Hair/hair1.png"/>
+                                </Button>
 
-                            <Button x:Name="Hair2"
+                                <Button x:Name="Hair2"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="Hair2_Click"
                                 >
-                                <Image  x:Name="hair2" Source="Resources/hair2.png"/>
-                            </Button>
+                                    <Image  x:Name="hair2" Source="Resources/Hair/hair2.png"/>
+                                </Button>
 
-                            <Button x:Name="Hair3"
+                                <Button x:Name="Hair3"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="Hair3_Click"
                                 >
-                                <Image  x:Name="hair3" Source="Resources/hair3.png"/>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,80,0.4,240" Orientation="Horizontal">
-                            <Button x:Name="Hair4"
+                                    <Image  x:Name="hair3" Source="Resources/Hair/hair3.png"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,80,0.2,300" Orientation="Horizontal">
+                                <Button x:Name="Hair4"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Hair4_Click"
                         >
-                                <Image  x:Name="hair4" Source="Resources/hair4.png"/>
-                            </Button>
-                            <Button x:Name="Hair5"
+                                    <Image  x:Name="hair4" Source="Resources/Hair/hair4.png"/>
+                                </Button>
+                                <Button x:Name="Hair5"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Hair5_Click"
                         >
-                                <Image  x:Name="hair5" Source="Resources/hair5.png"/>
-                            </Button>
-                            <Button x:Name="Hair6"
+                                    <Image  x:Name="hair5" Source="Resources/Hair/hair5.png"/>
+                                </Button>
+                                <Button x:Name="Hair6"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Hair6_Click"
                         >
-                                <Image  x:Name="hair6" Source="Resources/hair6.png"/>
-                            </Button>
+                                    <Image  x:Name="hair6" Source="Resources/Hair/hair6.png"/>
+                                </Button>
 
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,164,0.4,156" Orientation="Horizontal">
-                            <Button x:Name="Hair7"
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,164,0.2,216" Orientation="Horizontal">
+                                <Button x:Name="Hair7"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Hair7_Click"
                         >
-                                <Image  x:Name="hair7" Source="Resources/hair7.png"/>
-                            </Button>
-                            <Button x:Name="Hair8"
+                                    <Image  x:Name="hair7" Source="Resources/Hair/hair7.png"/>
+                                </Button>
+                                <Button x:Name="Hair8"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Hair8_Click"
                         >
-                                <Image  x:Name="hair8" Source="Resources/hair8.png"/>
-                            </Button>
-                          </StackPanel>
-                    </Grid>
+                                    <Image  x:Name="hair8" Source="Resources/Hair/hair8.png"/>
+                                </Button>
+                                <Button x:Name="Hair9"
+                            Height="60"
+                            Width="60"
+                            Margin="5,20"
+                            Content="🚫"
+                            FontSize="30"
+                            Click="Hair9_Click"
+                        />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </TabItem>
-                <TabItem Header="Mouths">
-                    <Grid Background="#FFE5E5E5">
-                        <StackPanel Orientation="Horizontal" 
+                <TabItem >
+                    <TabItem.Header>
+                        <Image Source="Resources/Icons/mouthicon.png" Height="50" Width="50"/>
+                    </TabItem.Header>
+                    <Border BorderBrush="#5b5c5e" 
+                            BorderThickness="3"
+                            CornerRadius="10">
+                        <Grid >
+                            <StackPanel Orientation="Horizontal" 
                                 VerticalAlignment="Top"
-                                Margin="0,10,20.4,0">
-                            <Button  x:Name="Mouth1"
+                                Margin="0,10,10.2,0">
+                                <Button  x:Name="Mouth1"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="Mouth1_Click">
-                                <Image x:Name="mouth1" Source="Resources/mouth1.png"/>
-                            </Button>
+                                    <Image x:Name="mouth1" Source="Resources/Mouth/mouth1.png"/>
+                                </Button>
 
-                            <Button  x:Name="Mouth2"
+                                <Button  x:Name="Mouth2"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="Mouth2_Click">
-                                <Image x:Name="mouth2" Source="Resources/mouth2.png"/>
-                            </Button>
+                                    <Image x:Name="mouth2" Source="Resources/Mouth/mouth2.png"/>
+                                </Button>
 
-                            <Button  x:Name="Mouth3"
+                                <Button  x:Name="Mouth3"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="Mouth3_Click">
-                                <Image x:Name="mouth3" Source="Resources/mouth3.png"/>
-                            </Button>
+                                    <Image x:Name="mouth3" Source="Resources/Mouth/mouth3.png"/>
+                                </Button>
 
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,80,0.4,240" Orientation="Horizontal">
-                            <Button x:Name="Mouth4"
+                            </StackPanel>
+                            <StackPanel Margin="0,72,0.2,313" Orientation="Horizontal">
+                                <Button x:Name="Mouth4"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth4_Click"
                         >
-                                <Image  x:Name="mouth4" Source="Resources/mouth4.png" Width="60"/>
-                            </Button>
-                            <Button x:Name="Mouth5"
+                                    <Image  x:Name="mouth4" Source="Resources/Mouth/mouth4.png" Width="60"/>
+                                </Button>
+                                <Button x:Name="Mouth5"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth5_Click"
                         >
-                                <Image  x:Name="mouth5" Source="Resources/mouth5.png" Width="60"/>
-                            </Button>
-                            <Button x:Name="Mouth6"
+                                    <Image  x:Name="mouth5" Source="Resources/Mouth/mouth5.png" Width="60"/>
+                                </Button>
+                                <Button x:Name="Mouth6"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth6_Click"
                         >
-                                <Image  x:Name="mouth6" Source="Resources/mouth6.png" Width="60"/>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,165,0.4,155" Orientation="Horizontal">
-                            <Button x:Name="Mouth7"
+                                    <Image  x:Name="mouth6" Source="Resources/Mouth/mouth6.png" Width="60"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,155,0.2,225" Orientation="Horizontal">
+                                <Button x:Name="Mouth7"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth7_Click"
                         >
-                                <Image  x:Name="mouth7" Source="Resources/mouth7.png" Width="60"/>
-                            </Button>
-                            <Button x:Name="Mouth8"
+                                    <Image  x:Name="mouth7" Source="Resources/Mouth/mouth7.png" Width="60"/>
+                                </Button>
+                                <Button x:Name="Mouth8"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth8_Click"
                         >
-                                <Image  x:Name="mouth8" Source="Resources/mouth8.png" Width="60"/>
-                            </Button>
-                            <Button x:Name="Mouth9"
+                                    <Image  x:Name="mouth8" Source="Resources/Mouth/mouth8.png" Width="60"/>
+                                </Button>
+                                <Button x:Name="Mouth9"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth9_Click"
                         >
-                                <Image  x:Name="mouth9" Source="Resources/mouth9.png" Width="60"/>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,247,0.4,73" Orientation="Horizontal">
-                            <Button x:Name="Mouth10"
+                                    <Image  x:Name="mouth9" Source="Resources/Mouth/mouth9.png" Width="60"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,238,0.2,142" Orientation="Horizontal">
+                                <Button x:Name="Mouth10"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth10_Click"
                         >
-                                <Image  x:Name="mouth10" Source="Resources/mouth10.png" Width="60"/>
-                            </Button>
-                            <Button x:Name="Mouth11"
+                                    <Image  x:Name="mouth10" Source="Resources/Mouth/mouth10.png" Width="60"/>
+                                </Button>
+                                <Button x:Name="Mouth11"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth11_Click"
                         >
-                                <Image  x:Name="mouth11" Source="Resources/mouth11.png" Width="60"/>
-                            </Button>
-                            <Button x:Name="Mouth12"
+                                    <Image  x:Name="mouth11" Source="Resources/Mouth/mouth11.png" Width="60"/>
+                                </Button>
+                                <Button x:Name="Mouth12"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="Mouth12_Click"
                         >
-                                <Image  x:Name="mouth12" Source="Resources/mouth12.png" Width="60"/>
-                            </Button>
-                        </StackPanel>
-                    </Grid>
+                                    <Image  x:Name="mouth12" Source="Resources/Mouth/mouth12.png" Width="60"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Margin="0,309,0.2,33" Orientation="Horizontal">
+                                <Button x:Name="mouth13"
+                            Height="60"
+                            Width="60"
+                            Margin="5,39,5,38.6"
+                            Content="🚫"
+                            FontSize="30"
+                            Click="Mouth13_Click"
+                        />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </TabItem>
-                <TabItem Header="Acessiories">
-                    <Grid Background="#FFE5E5E5">
-                        <StackPanel Orientation="Horizontal" 
+                <TabItem >
+                    <TabItem.Header>
+                        <Image Source="Resources/Icons/clothicon.png" Height="50" Width="50"/>
+                    </TabItem.Header>
+                    <Border BorderBrush="#5b5c5e" 
+                            BorderThickness="3"
+                            CornerRadius="10">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" 
                                 VerticalAlignment="Top"
-                                Margin="10">
-                            <Button x:Name="A1"
+                                Margin="10,10,0.2,0">
+                                <Button
+                                 x:Name="Clothes1"
+                                 Height="60"
+                                Width="60"
+                                Margin="5"
+                               Click="Clothes1_Click"
+                                    >
+                                    <Image x:Name="shirt1" Source="Resources/Clothes/shirt1.png"/>
+                                </Button>
+                                <Button
+                                 x:Name="Clothes2"
+                                 Height="60"
+                                Width="60"
+                                Margin="5"
+                               Click="Clothes2_Click"
+                                    >
+                                    <Image x:Name="shirt2" Source="Resources/Clothes/shirt2.png"/>
+                                </Button>
+                                <Button
+                                 x:Name="Clothes3"
+                                 Height="60"
+                                Width="60"
+                                Margin="5"
+                               Click="Clothes3_Click"
+                                    >
+                                    <Image x:Name="shirt3" Source="Resources/Clothes/shirt3.png"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="10,80,-9.8,262.4" Orientation="Horizontal">
+                                <Button x:Name="Clothes4"
+                            Height="60"
+                            Width="60"
+                            Margin="5,20"
+                            Content="🚫"
+                            FontSize="30"
+                            Click="Clothes4_Click"
+                        />
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </TabItem>
+                <TabItem >
+                    <TabItem.Header>
+                        <Image Source="Resources/Icons/Ascicon.png" Height="50" Width="50"/>
+                    </TabItem.Header>
+                    <Border BorderBrush="#5b5c5e" 
+                            BorderThickness="3"
+                            CornerRadius="10">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Top"
+                                Margin="0,10,0.2,0">
+                                <Button x:Name="A1"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="A1_Click"
                                 >
-                                <Image  x:Name="a1" Source="Resources/a1.png"/>
-                            </Button>
+                                    <Image  x:Name="a1" Source="Resources/MISC/a1.png"/>
+                                </Button>
 
-                            <Button x:Name="A2"
+                                <Button x:Name="A2"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="A2_Click"
                                 >
-                                <Image  x:Name="a2" Source="Resources/a2.png"/>
-                            </Button>
+                                    <Image  x:Name="a2" Source="Resources/MISC/a2.png"/>
+                                </Button>
 
-                            <Button x:Name="A3"
+                                <Button x:Name="A3"
                             Height="60"
                             Width="60"
                             Margin="5"
                             Click="A3_Click"
                                 >
-                                <Image  x:Name="a3" Source="Resources/a3.png"/>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Height="100" Margin="0,80,0.4,240" Orientation="Horizontal">
-                            <Button x:Name="A4"
+                                    <Image  x:Name="a3" Source="Resources/MISC/a3.png"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,80,0.2,300" Orientation="Horizontal">
+                                <Button x:Name="A4"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="A4_Click"
                         >
-                                <Image  x:Name="a4" Source="Resources/a4.png" Height="95" Width="76"/>
-                            </Button>
-                            <Button x:Name="A5"
+                                    <Image  x:Name="a4" Source="Resources/MISC/a4.png" Height="95" Width="76"/>
+                                </Button>
+                                <Button x:Name="A5"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="A5_Click"
                         >
-                                <Image  x:Name="a5" Source="Resources/a5.png" Height="60" Width="60"/>
-                            </Button>
-                            <Button x:Name="A6"
+                                    <Image  x:Name="a5" Source="Resources/MISC/a5.png" Height="60" Width="60"/>
+                                </Button>
+                                <Button x:Name="A6"
                         Height="60"
                         Width="60"
                         Margin="5"
                         Click="A6_Click"
                         >
-                                <Image  x:Name="a6" Source="Resources/a6.png" Height="60" Width="60"/>
-                            </Button>
-                        </StackPanel>
-                    </Grid>
+                                    <Image  x:Name="a6" Source="Resources/MISC/a6.png" Height="60" Width="60"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Height="100" Margin="0,162,0.2,218" Orientation="Horizontal">
+                                <Button x:Name="A7"
+                            Height="60"
+                            Width="60"
+                            Margin="5,20"
+                            Content="🚫"
+                            FontSize="30"
+                            Click="A7_Click"
+                        />
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </TabItem>
+                <TabItem >
+                    <TabItem.Header>
+                        <Image Source="Resources/Icons/backicon.png" Height="50" Width="50"/>
+                    </TabItem.Header>
+                    <Border BorderBrush="#5b5c5e" 
+                            BorderThickness="3"
+                            CornerRadius="10">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Top"
+                                Margin="10,10,0.2,0">
+                                <Button
+                                 x:Name="B1"
+                                 Height="60"
+                                Width="60"
+                                Margin="5"
+                               Click="B1_Click"
+                                    >
+                                    <Image x:Name="Bg1" Source="Resources/BG/DOTS.jpg"/>
+                                </Button>
+                                <Button
+                                 x:Name="B2"
+                                 Height="60"
+                                Width="60"
+                                Margin="5"
+                               Click="B2_Click"
+                                    >
+                                    <Image x:Name="Bg2" Source="Resources/BG/strip.jpg"/>
+                                </Button>
+                                <Button
+                                 x:Name="B3"
+                                 Height="60"
+                                Width="60"
+                                Margin="5"
+                               Click="B3_Click"
+                                    >
+                                    <Image x:Name="Bg3" Source="Resources/BG/Triangle.jpg"/>
+                                </Button>
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </TabItem>
             </TabControl>
         </DockPanel>
-        <Button Content="Reset" 
+
+            <Button Content="Reset" 
                 HorizontalAlignment="Left" 
                 Margin="311,524,0,0" 
                 VerticalAlignment="Top" 
                 Width="80" Height="30"
-                Click="Button_Click" FontFamily="Comic Sans MS"/>
+                Click="Button_Click" FontFamily="Comic Sans MS"
+                />
+        
         <Button Content="Save" 
                 HorizontalAlignment="Left" 
                 Margin="212,524,0,0" 

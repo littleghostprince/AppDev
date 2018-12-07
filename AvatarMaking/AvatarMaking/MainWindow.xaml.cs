@@ -92,7 +92,9 @@ namespace AvatarMaking
             Eyes.Source = null;
             Mouth.Source = null;
             Hair.Source = null;
-            HairAcessory = null;
+            HairAcessory.Source = null;
+            Clothes.Source = null;
+            Background.Source = Bg1.Source;
         }
 
         private void A1_Click(object sender, RoutedEventArgs e)
@@ -121,18 +123,21 @@ namespace AvatarMaking
             {
                 var encoder = new PngBitmapEncoder();
 
-                RenderTargetBitmap renderBitmap1 = new RenderTargetBitmap((int)Canvas.ActualWidth, (int)Canvas.ActualHeight, 96d, 96d, PixelFormats.Pbgra32);
-                
-                // needed otherwise the image output is black
-                Canvas.Measure(new System.Windows.Size((int)Canvas.ActualWidth, (int)Canvas.ActualHeight));
-                Canvas.Arrange(new Rect(new System.Windows.Size((int)Canvas.ActualWidth, (int)Canvas.ActualHeight)));
+                PresentationSource source = PresentationSource.FromVisual(Canvas);
+                RenderTargetBitmap rtb = new RenderTargetBitmap((int)Canvas.RenderSize.Width,(int)Canvas.RenderSize.Height, 96, 96, PixelFormats.Default);
 
-                renderBitmap1.Render(Canvas);
+                VisualBrush sourceBrush = new VisualBrush(Canvas);
+                DrawingVisual drawingVisual = new DrawingVisual();
+                DrawingContext drawingContext = drawingVisual.RenderOpen();
 
-                encoder.Frames.Add(BitmapFrame.Create(renderBitmap1));
+                using (drawingContext)
+                {
+                    drawingContext.DrawRectangle(sourceBrush, null, new Rect(new System.Windows.Point(0, 0),
+                          new System.Windows.Point(Canvas.RenderSize.Width, Canvas.RenderSize.Height)));
+                }
+                rtb.Render(drawingVisual);
 
-                //encoder.Frames.Add(BitmapFrame.Create((BitmapSource)Canvas.con));
-                // encoder.Frames.Add(BitmapFrame.Create((BitmapSource)Background.Source)); //Saves the background
+                encoder.Frames.Add(BitmapFrame.Create(rtb));
 
                 using (FileStream stream = new FileStream(fileDirectory.FileName, FileMode.Create))
                 {
@@ -145,6 +150,7 @@ namespace AvatarMaking
                 }
                 newBitmap.Save(fileDirectory.FileName);
                 newBitmap.Dispose();
+
             }
         }
 
@@ -241,6 +247,61 @@ namespace AvatarMaking
         private void Eye8_Click(object sender, RoutedEventArgs e)
         {
             Eyes.Source = eye8.Source;
+        }
+
+        private void Clothes1_Click(object sender, RoutedEventArgs e)
+        {
+            Clothes.Source = shirt1.Source;
+        }
+
+        private void Clothes2_Click(object sender, RoutedEventArgs e)
+        {
+            Clothes.Source = shirt2.Source;
+        }
+
+        private void Clothes3_Click(object sender, RoutedEventArgs e)
+        {
+            Clothes.Source = shirt3.Source;
+        }
+
+        private void B1_Click(object sender, RoutedEventArgs e)
+        {
+            Background.Source = Bg1.Source;
+        }
+
+        private void B2_Click(object sender, RoutedEventArgs e)
+        {
+            Background.Source = Bg2.Source;
+        }
+
+        private void B3_Click(object sender, RoutedEventArgs e)
+        {
+            Background.Source = Bg3.Source;
+        }
+
+        private void A7_Click(object sender, RoutedEventArgs e)
+        {
+            HairAcessory.Source = null;
+        }
+
+        private void Clothes4_Click(object sender, RoutedEventArgs e)
+        {
+            Clothes.Source = null;
+        }
+
+        private void Eye9_Click(object sender, RoutedEventArgs e)
+        {
+            Eyes.Source = null;
+        }
+
+        private void Hair9_Click(object sender, RoutedEventArgs e)
+        {
+            Hair.Source = null;
+        }
+
+        private void Mouth13_Click(object sender, RoutedEventArgs e)
+        {
+            Mouth.Source = null;
         }
     }
 }

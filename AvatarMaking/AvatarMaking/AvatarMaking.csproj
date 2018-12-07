@@ -99,58 +99,67 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\base.png" />
-    <Resource Include="Resources\DOTS.jpg" />
+    <Resource Include="Resources\marbel.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\eye1.png" />
-    <Resource Include="Resources\eye2.png" />
-    <Resource Include="Resources\eye3.png" />
+    <Resource Include="Resources\BG\DOTS.jpg" />
+    <Resource Include="Resources\BG\strip.jpg" />
+    <Resource Include="Resources\BG\Triangle.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\hair1.png" />
+    <Resource Include="Resources\Clothes\shirt1.png" />
+    <Resource Include="Resources\Clothes\shirt2.png" />
+    <Resource Include="Resources\Clothes\shirt3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\soft.jpg" />
+    <Resource Include="Resources\eyes\eye1.png" />
+    <Resource Include="Resources\eyes\eye2.png" />
+    <Resource Include="Resources\eyes\eye3.png" />
+    <Resource Include="Resources\eyes\eye4.png" />
+    <Resource Include="Resources\eyes\eye5.png" />
+    <Resource Include="Resources\eyes\eye6.png" />
+    <Resource Include="Resources\eyes\eye7.png" />
+    <Resource Include="Resources\eyes\eye8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\hair2.png" />
-    <Resource Include="Resources\hair3.png" />
+    <Resource Include="Resources\Hair\hair1.png" />
+    <Resource Include="Resources\Hair\hair2.png" />
+    <Resource Include="Resources\Hair\hair3.png" />
+    <Resource Include="Resources\Hair\hair4.png" />
+    <Resource Include="Resources\Hair\hair5.png" />
+    <Resource Include="Resources\Hair\hair6.png" />
+    <Resource Include="Resources\Hair\hair7.png" />
+    <Resource Include="Resources\Hair\hair8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\mouth1.png" />
-    <Resource Include="Resources\mouth2.png" />
-    <Resource Include="Resources\mouth3.png" />
+    <Resource Include="Resources\Icons\Ascicon.png" />
+    <Resource Include="Resources\Icons\backicon.png" />
+    <Resource Include="Resources\Icons\clothicon.png" />
+    <Resource Include="Resources\Icons\eyesicon.png" />
+    <Resource Include="Resources\Icons\hair.png" />
+    <Resource Include="Resources\Icons\mouthicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\a1.png" />
-    <Resource Include="Resources\a2.png" />
-    <Resource Include="Resources\a3.png" />
-    <Resource Include="Resources\eyes4.png" />
-    <Resource Include="Resources\hair4.png" />
-    <Resource Include="Resources\mouth4.png" />
+    <Resource Include="Resources\MISC\a1.png" />
+    <Resource Include="Resources\MISC\a2.png" />
+    <Resource Include="Resources\MISC\a3.png" />
+    <Resource Include="Resources\MISC\a4.png" />
+    <Resource Include="Resources\MISC\a5.png" />
+    <Resource Include="Resources\MISC\a6.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\a4.png" />
-    <Resource Include="Resources\a5.png" />
-    <Resource Include="Resources\a6.png" />
-    <Resource Include="Resources\bald.png" />
-    <Resource Include="Resources\eye4.png" />
-    <Resource Include="Resources\eye5.png" />
-    <Resource Include="Resources\eye6.png" />
-    <Resource Include="Resources\eye7.png" />
-    <Resource Include="Resources\eye8.png" />
-    <Resource Include="Resources\hair5.png" />
-    <Resource Include="Resources\hair6.png" />
-    <Resource Include="Resources\hair7.png" />
-    <Resource Include="Resources\hair8.png" />
-    <Resource Include="Resources\mouth10.png" />
-    <Resource Include="Resources\mouth11.png" />
-    <Resource Include="Resources\mouth12.png" />
-    <Resource Include="Resources\mouth5.png" />
-    <Resource Include="Resources\mouth6.png" />
-    <Resource Include="Resources\mouth7.png" />
-    <Resource Include="Resources\mouth8.png" />
-    <Resource Include="Resources\mouth9.png" />
+    <Resource Include="Resources\Mouth\mouth1.png" />
+    <Resource Include="Resources\Mouth\mouth10.png" />
+    <Resource Include="Resources\Mouth\mouth11.png" />
+    <Resource Include="Resources\Mouth\mouth12.png" />
+    <Resource Include="Resources\Mouth\mouth2.png" />
+    <Resource Include="Resources\Mouth\mouth3.png" />
+    <Resource Include="Resources\Mouth\mouth4.png" />
+    <Resource Include="Resources\Mouth\mouth5.png" />
+    <Resource Include="Resources\Mouth\mouth6.png" />
+    <Resource Include="Resources\Mouth\mouth7.png" />
+    <Resource Include="Resources\Mouth\mouth8.png" />
+    <Resource Include="Resources\Mouth\mouth9.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
